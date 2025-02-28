@@ -13,15 +13,17 @@ public class BaseService {
 	//Creating the Request
 	//Handling the response
 	
-	{
-		RestAssured.filters(new LoggingFilter());
-	}
+	
 	
 	private static final String BASE_URL="";
 	private RequestSpecification requestSpecification;
 	
 	public BaseService() {
 		requestSpecification = given().baseUri(BASE_URL);
+	}
+	
+	{
+		RestAssured.filters(new LoggingFilter());
 	}
 	
 	protected RequestSpecification setAuthToken(String token) {
